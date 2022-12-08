@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_time_tracker/common_widgets/custom_raised_button.dart';
+import 'package:flutter_layout_time_tracker/app/sign_in/sign_in_button.dart';
+import 'package:flutter_layout_time_tracker/app/sign_in/social_sign_in_button.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -23,26 +24,46 @@ class SignInPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           const Text(
-            'Sign Inn',
+            'Sign In',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w600),
           ),
-          const SizedBox(height: 8.0),
-          ElevatedButton(
-            onPressed: () {
-              debugPrint('Button Pressed');
-            },
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0))),
-            child: const Text(
-              'Sign In with Google',
-              style: TextStyle(color: Colors.black87, fontSize: 15.0),
-            ),
+          SizedBox(height: 30.0),
+          SocialSignInButton(
+            assetName: 'images/google-logo.png',
+            color: Colors.white,
+            onPressed: () {},
+            text: "Sign In Google",
+            textColor: Colors.black87,
           ),
-          const SizedBox(height: 8.0),
-          const CustomRaisedButton()
+          SizedBox(height: 8.0),
+          SocialSignInButton(
+            assetName: 'images/facebook-logo.png',
+            color: Color(0xFF334D92),
+            onPressed: () {},
+            text: "Sign In Facebook",
+            textColor: Colors.white,
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            color: Colors.teal,
+            onPressed: () {},
+            text: "Sign In Email",
+            textColor: Colors.white,
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            'or',
+            style: TextStyle(fontSize: 18.0),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            color: Colors.lime,
+            onPressed: () {},
+            text: "Sign In Anonymous",
+            textColor: Colors.black87,
+          ),
         ],
       ),
     );

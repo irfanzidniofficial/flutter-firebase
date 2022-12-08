@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
@@ -11,34 +10,32 @@ class MyWidget extends StatelessWidget {
 }
 
 class CustomRaisedButton extends StatelessWidget {
-  const CustomRaisedButton({super.key});
+  const CustomRaisedButton({
+    Key? key,
+    required this.child,
+    required this.color,
+    this.borderRadius = 2.0,
+    this.height = 50,
+    required this.onPressed,
+  }) : super(key: key);
 
-  // CustomRaisedButton({
-  //   required this.child,
-  //   required this.color,
-  //   required this.borderRadius,
-  //   required this.onPressed,
-  // })
-  // final Widget child;
-  // final Color color;
-  // final double borderRadius;
-  // final VoidCallback onPressed;
-
-
+  final Widget child;
+  final double height;
+  final Color color;
+  final double borderRadius;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        debugPrint('Button Pressed');
-      },
-      style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.grey,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))),
-      child: const Text(
-        'Sign In with Google',
-        style: TextStyle(color: Colors.black87, fontSize: 15.0),
+    return SizedBox(
+      height: height,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+            backgroundColor: color,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius))),
+        child: child,
       ),
     );
   }
