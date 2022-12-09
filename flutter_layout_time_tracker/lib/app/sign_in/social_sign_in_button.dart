@@ -3,12 +3,12 @@ import 'package:flutter_layout_time_tracker/common_widgets/custom_raised_button.
 
 class SocialSignInButton extends CustomRaisedButton {
   SocialSignInButton({
-    Key? key,
     required String assetName,
     required String text,
     required Color color,
     required Color textColor,
     required VoidCallback onPressed,
+    super.key,
   }) : super(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
