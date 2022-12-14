@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_layout_time_tracker">
+    
    <application
         android:label="flutter_layout_time_tracker"
         android:name="${applicationName}"
